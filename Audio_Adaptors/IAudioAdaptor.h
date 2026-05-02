@@ -10,12 +10,12 @@ using namespace std;
 class IAudioAdaptor: public IAudioOutputDevice
 {
 private:
-    IOutputDeviceAPI *outputDeviceAPI; // Pointer to the output device API
+    IOutput_Device_API *outputDeviceAPI; // Pointer to the output device API
 
 public:
-    IAudioAdaptor(IOutputDeviceAPI *api) : outputDeviceAPI(api) {}
+    IAudioAdaptor(IOutput_Device_API *api) : outputDeviceAPI(api) {}
 
-    IOutputDeviceAPI *getOutputDeviceAPI() const
+    IOutput_Device_API *getOutputDeviceAPI() const
     {
         return outputDeviceAPI;
     }

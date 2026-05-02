@@ -38,15 +38,15 @@ public:
     {
         if (deviceType == "wired_speaker")
         {
-            return new WiredSpeakerAdaptor(new WiredSpeakerAPI());
+            return new WiredSpeakerAdaptor(new Wired_Speaker_API());
         }
         else if (deviceType == "bluetooth_speaker")
         {
-            return new BluetoothAdaptor(new BluetoothSpeakerAPI());
+            return new BluetoothAdaptor(new Bluetooth_Speaker_API());
         }
         else if (deviceType == "headphones")
         {
-            return new HeadphoneAdaptor(new HeadphoneSpeakerAPI());
+            return new HeadphoneAdaptor(new Headphone_Speaker_API());
         }
         else
         {

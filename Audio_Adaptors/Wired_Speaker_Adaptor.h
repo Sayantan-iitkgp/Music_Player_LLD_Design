@@ -11,12 +11,13 @@ using namespace std;
 class WiredSpeakerAdaptor : public IAudioAdaptor
 {
 public:
-    WiredSpeakerAdaptor(IOutputDeviceAPI *api) : IAudioAdaptor(api) {}
+    WiredSpeakerAdaptor(IOutput_Device_API *api) : IAudioAdaptor(api) {}
     
     void play(Song* song) override
     {
         cout << "WiredSpeakerAdaptor: Playing '" << song->getName() << "' by " << song->getArtist() << "." << endl;
-        getOutputDeviceAPI()->play(song->getPath());
+        string path = song->getPath();
+        getOutputDeviceAPI()->play(path);
     }
     
     void pause() override

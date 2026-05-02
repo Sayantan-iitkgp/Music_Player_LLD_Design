@@ -11,12 +11,13 @@ using namespace std;
 class BluetoothAdaptor : public IAudioAdaptor
 {
 public:
-    BluetoothAdaptor(IOutputDeviceAPI *api) : IAudioAdaptor(api) {}
+    BluetoothAdaptor(IOutput_Device_API *api) : IAudioAdaptor(api) {}
     
     void play(Song* song) override
     {
         cout << "BluetoothAdaptor: Playing '" << song->getName() << "' by " << song->getArtist() << "." << endl;
-        getOutputDeviceAPI()->play(song->getPath());
+        string path = song->getPath();
+        getOutputDeviceAPI()->play(path);
     }
     
     void pause() override

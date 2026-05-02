@@ -11,12 +11,13 @@ using namespace std;
 class HeadphoneAdaptor : public IAudioAdaptor
 {
 public:
-    HeadphoneAdaptor(IOutputDeviceAPI *api) : IAudioAdaptor(api) {}
+    HeadphoneAdaptor(IOutput_Device_API *api) : IAudioAdaptor(api) {}
     
     void play(Song* song) override
     {
         cout << "HeadphoneAdaptor: Playing '" << song->getName() << "' by " << song->getArtist() << "." << endl;
-        getOutputDeviceAPI()->play(song->getPath());
+        string path = song->getPath();
+        getOutputDeviceAPI()->play(path);
     }
     
     void pause() override
